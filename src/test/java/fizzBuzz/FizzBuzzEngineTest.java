@@ -16,7 +16,7 @@ public class FizzBuzzEngineTest {
         String result = tapSystemOut(() -> {
             engine.displayFizzBuzz(input);
         });
-        assertEquals("1 => 1", result);
+        assertEquals("1 => 1\n", result);
     }
 
     @Test
@@ -27,7 +27,22 @@ public class FizzBuzzEngineTest {
         String result = tapSystemOut(() -> {
             engine.displayFizzBuzz(input);
         });
-        assertEquals("1 => 1\n 2 => 2\n 3 => Fizz\n", result);
+        assertEquals("1 => 1\n2 => 2\n3 => Fizz\n", result);
+    }
+
+    @Test
+    public void shouldDisplayFizzToMulOf3AndBuzzToMulOf5AndFizzBuzzToMulOf15WhenInputIsGreaterThen0() throws Exception {
+        int input = 15;
+        FizzBuzzEngine engine = new FizzBuzzEngine();
+
+        String result = tapSystemOut(() -> {
+            engine.displayFizzBuzz(input);
+        });
+        String expected = "1 => 1\n2 => 2\n3 => Fizz\n4 => 4\n5 => Buzz\n" +
+                          "6 => Fizz\n7 => 7\n8 => 8\n9 => Fizz\n10 => Buzz\n" +
+                          "11 => 11\n12 => Fizz\n13 => 13\n14 => 14\n15 => FizzBuzz";
+
+        assertEquals(expected, result.trim());
     }
 
 }

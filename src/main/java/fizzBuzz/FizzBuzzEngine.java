@@ -1,10 +1,15 @@
 package fizzBuzz;
 
+import java.util.List;
+
 public class FizzBuzzEngine {
+
+    private final FizzBuzzConverter converter = new FizzBuzzConverter();
+    private final ListFactory factory = new ListFactory();
 
 
     public void displayFizzBuzz(int i) {
-        if(i == 1) System.out.print("1 => 1");
-        if(i == 3) System.out.print("1 => 1\n 2 => 2\n 3 => Fizz\n");
+        List<Integer> integerList = factory.generateList(i);
+        integerList.forEach(item -> System.out.print(item + " => " + converter.convert(item) + "\n"));
     }
 }
