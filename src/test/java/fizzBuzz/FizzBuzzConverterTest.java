@@ -28,4 +28,12 @@ class FizzBuzzConverterTest {
         assertEquals("FizzBuzz", result);
     }
 
+    @Test
+    public void shouldReturnTheSameInputWhenInputIsNotMultipleOf15Or5Or3() {
+        int number = 4;
+        FizzBuzzConverter fizzBuzzConverter = new FizzBuzzConverter();
+        String result = fizzBuzzConverter.convert(number);
+        assertEquals(String.valueOf(number), result);
+    }
+
 }
