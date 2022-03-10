@@ -3,6 +3,7 @@ package fizzBuzz;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class FizzBuzzConverterTest {
 
@@ -34,6 +35,13 @@ class FizzBuzzConverterTest {
         FizzBuzzConverter fizzBuzzConverter = new FizzBuzzConverter();
         String result = fizzBuzzConverter.convert(number);
         assertEquals(String.valueOf(number), result);
+    }
+    @Test
+    public void shouldThrowRunTimeExceptionWhenInputIs0() {
+
+        FizzBuzzConverter fizzBuzzConverter = new FizzBuzzConverter();
+        RuntimeException exception = assertThrows(RuntimeException.class, () -> fizzBuzzConverter.convert(0));
+        assertEquals("Number must be greater then zero", exception.getMessage());
     }
 
 }
