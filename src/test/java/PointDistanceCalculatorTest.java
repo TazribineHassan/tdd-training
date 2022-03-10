@@ -1,5 +1,7 @@
 import org.junit.Assert;
 import org.junit.Test;
+import point.Point;
+import point.PointDistanceCalculator;
 
 public class PointDistanceCalculatorTest {
 
