@@ -8,7 +8,7 @@ class FizzBuzzConverterTest {
 
 
     @Test
-    public void shouldReturnFizzWhenInputIs3(){
+    public void shouldReturnFizzWhenInputIsMultipleOf3(){
         FizzBuzzConverter fizzBuzzConverter=new FizzBuzzConverter();
         String result=fizzBuzzConverter.convert(3);
         assertEquals("Fizz",result);
