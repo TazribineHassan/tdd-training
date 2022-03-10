@@ -19,4 +19,15 @@ public class FizzBuzzEngineTest {
         assertEquals("1 => 1", result);
     }
 
+    @Test
+    public void shouldDisplay1To1And2To2And3ToFizzWhenInputIs3() throws Exception {
+        int input = 3;
+        FizzBuzzEngine engine = new FizzBuzzEngine();
+
+        String result = tapSystemOut(() -> {
+            engine.displayFizzBuzz(input);
+        });
+        assertEquals("1 => 1\n 2 => 2\n 3 => Fizz\n", result);
+    }
+
 }
